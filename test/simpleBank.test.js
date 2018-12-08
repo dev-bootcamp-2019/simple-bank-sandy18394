@@ -22,7 +22,7 @@ contract('SimpleBank', function(accounts) {
   it("should deposit correct amount", async () => {
     const bank = await SimpleBank.deployed();
 
-    await bank.enroll({from: bob});
+    await bank.enroll({from: alice});
 
     await bank.deposit({from: alice, value: deposit});
     const balance = await bank.balance({from: alice});
